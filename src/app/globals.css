@@ -1,132 +1,114 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
-    --background: 0, 0%, 96%; 
+    --background: 0, 0%, 96%;
     --foreground: 0, 0%, 50%;
     --placeholder: 0, 0%, 60%;
-    
-    
-    --container: 0 0 100%;
+
+    --container: 0, 0%, 100%;
     --left-panel: 0, 0%, 99%;
 
     --gray-primary: 300, 14%, 14%;
     --gray-secondary: 0, 0%, 96%;
-
-    --icon-color: 0, 0%, 70%;
-
-    --chat-hover: 180, 5%, 96%;
-
-    --green-primary:300, 14%, 27%;
-    --green-chat: 300, 13%, 18%;
-    
     --gray-tertiary: 0, 0%, 94%;
 
-    /* CLASSES ADDED BY US */
+    --icon-color: 0, 0%, 70%;
+    --chat-hover: 180, 5%, 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --green-primary: 300, 14%, 27%;
+    --green-chat: 300, 13%, 18%;
 
-    --popover: 0 0% 100%;
+    /* Custom design tokens */
+    --card: 0, 0%, 100%;
+    --card-foreground: 222.2, 84%, 4.9%;
+
+    --popover: 0, 0%, 100%;
     --popover-foreground: 0, 0%, 50%;
 
     --primary: 300, 15%, 20%;
-    --primary-foreground: 0 0% 50%;
+    --primary-foreground: 0, 0%, 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210, 40%, 96.1%;
+    --secondary-foreground: 222.2, 47.4%, 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210, 40%, 96.1%;
+    --muted-foreground: 215.4, 16.3%, 46.9%;
 
     --accent: 300, 14%, 14%;
     --accent-foreground: 0, 0%, 96%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0, 84.2%, 60.2%;
+    --destructive-foreground: 210, 40%, 98%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 214.3, 31.8%, 91.4%;
     --input: 225, 3%, 69%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 222.2, 84%, 4.9%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 300, 18%, 10%; /* CHANGED */
-    --foreground: 210 40% 98%;
+    --background: 300, 18%, 10%;
+    --foreground: 210, 40%, 98%;
     --placeholder: 0, 0%, 60%;
 
-    
     --container: 318, 22%, 9%;
+    --left-panel: 318, 22%, 9%;
 
     --gray-primary: 300, 14%, 14%;
     --gray-secondary: 300, 14%, 14%;
+    --gray-tertiary: 300, 14%, 14%;
 
-    --left-panel: 318, 22%, 9%;
     --chat-hover: 300, 14%, 14%;
-
     --green-primary: 300, 14%, 20%;
     --green-secondary: 165, 100%, 39%;
     --green-chat: 300, 13%, 22%;
 
-    --gray-tertiary: 300, 14%, 14%;
-    /* CLASSES ADDED BY US */
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222.2, 84%, 4.9%;
+    --card-foreground: 210, 40%, 98%;
 
     --popover: 318, 22%, 9%;
-    --popover-foreground: 210 40% 98%;
+    --popover-foreground: 210, 40%, 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210, 40%, 98%;
+    --primary-foreground: 222.2, 47.4%, 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217.2, 32.6%, 17.5%;
+    --secondary-foreground: 210, 40%, 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217.2, 32.6%, 17.5%;
+    --muted-foreground: 215, 20.2%, 65.1%;
 
     --accent: 300, 14%, 20%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 210, 40%, 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0, 62.8%, 30.6%;
+    --destructive-foreground: 210, 40%, 98%;
 
-    --border: 217.2 32.6% 17.5%;
+    --border: 220, 9%, 46%;
     --input: 0, 0%, 60%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 212.7, 26.8%, 83.9%;
   }
 
- 
   .light input::placeholder {
     color: hsl(var(--placeholder));
   }
 
   .dark input::placeholder {
-    color: hsl(var(--placeholder)); /* In dark mode, it will be white */
+    color: hsl(var(--placeholder));
   }
 
   .myCallContainer {
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-}
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+  }
 
-  
-}
-
-
-/* Inside @layer base */
-@layer base {
   * {
-    border-color: var(--border);
+    border-color: hsl(var(--border));
   }
 
   body {
@@ -135,8 +117,8 @@
   }
 }
 
-/* WE ADDED => DARK MODE THIN SCROLLBAR */
 @layer components {
+  /* DARK MODE THIN SCROLLBAR */
   ::-webkit-scrollbar {
     width: 8px;
   }
