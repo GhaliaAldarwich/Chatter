@@ -112,6 +112,13 @@
   .dark input::placeholder {
     color: hsl(var(--placeholder)); /* In dark mode, it will be white */
   }
+
+  .myCallContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
   
 }
 
