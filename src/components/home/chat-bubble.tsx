@@ -8,12 +8,8 @@ import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Bot, X } from "lucide-react";
 import ChatAvatarActions from "./chat-avatar-actions";
-import { FileText, FileArchive, File } from "lucide-react";
-
 import { FaFilePdf, FaFileWord, FaFileAlt } from "react-icons/fa";
-import { useMutation } from "convex/react";
 
-import { api } from "../../../convex/_generated/api";
 
 
 

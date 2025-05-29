@@ -140,7 +140,13 @@ const UserListDialog = () => {
 							value={groupName}
 							onChange={(e) => setGroupName(e.target.value)}
 						/>
-						<Button className='flex gap-2' onClick={() => imgRef.current?.click()}>
+						<Button className=' flex gap-2 border
+   text-primary-foreground border-primary-foreground
+
+    dark:bg-card dark:text-primary-foreground dark:border-card 
+
+    hover:border
+    dark:hover:bg-gray-tertiary dark:hover:text-white' onClick={() => imgRef.current?.click()}>
 							<ImageIcon size={20} />
 							Group Image
 						</Button>
@@ -186,16 +192,27 @@ const UserListDialog = () => {
 				</div>
 				<div className='flex justify-between'>
 					<Button variant={"outline"}>Cancel</Button>
-					<Button
-						onClick={handelCreatConversation}
-						disabled={selectedUsers.length === 0 || (selectedUsers.length > 1 && !groupName) || isLoading}
-					>
-						{isLoading ? (
-							<div className='w-5 h-5 border-t-2 border-b-2 rounded-full animate-spin' />
-						) : (
-							"Create"
-						)}
-					</Button>
+				<Button
+  onClick={handelCreatConversation}
+  disabled={
+    selectedUsers.length === 0 ||
+    (selectedUsers.length > 1 && !groupName) ||
+    isLoading
+  }
+  className={`
+    text-primary-foreground border border-primary-foreground
+    dark:bg-card dark:text-primary-foreground dark:border-card
+    hover:border
+    dark:hover:bg-gray-tertiary dark:hover:text-white
+    transition-colors
+  `}
+>
+  {isLoading ? (
+    <div className="w-5 h-5 border-t-2 border-b-2 border-primary-foreground rounded-full animate-spin" />
+  ) : (
+    "Create"
+  )}
+</Button>
 				</div>
 			</DialogContent>
 		</Dialog>

@@ -4,7 +4,6 @@ import { Input } from "../ui/input";
 import ThemeSwitch from "./theme-switch";
 import Conversation from "./conversation";
 import { UserButton } from "@clerk/nextjs";
-import { SignedIn, SignedOut, SignIn, SignOutButton } from "@clerk/clerk-react";
 import UserListDialog from "./user-list-dialog"
 import { useConvexAuth, useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
