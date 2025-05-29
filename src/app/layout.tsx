@@ -1,9 +1,11 @@
-import { ThemeProvider } from "@/components/home/theme-provider";
+// src/app/layout.tsx
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ConvexClientProvider from "@/providers/convex-client-provider";
 import { Toaster } from "react-hot-toast";
+import ThemeHydrationFix from "@/components/home/ThemeHydrationFix";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,18 +16,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ConvexClientProvider>
+        <ConvexClientProvider>
+          <ThemeHydrationFix>
             {children}
             <Toaster />
-          </ConvexClientProvider>
-        </ThemeProvider>
+          </ThemeHydrationFix>
+        </ConvexClientProvider>
       </body>
     </html>
   );
